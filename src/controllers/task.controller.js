@@ -4,13 +4,13 @@ export const getTasks = async (req, res) => {
 
     const tasks = await Task.find({
         user: req.user.id
-    }).populate('user')
+    }).populate("user")
     res.json(tasks)
 }
 
 export const getTask = async (req, res) => {
 
-    const task = await Task.findById(req.params.id)
+    const task = await Task.findById(req.params.id).populate("user")
     if(!task) return res.status(404).json({ message: "Task not Found" })
     res.status(200).json(task) 
 }
