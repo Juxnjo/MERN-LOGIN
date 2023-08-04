@@ -1,8 +1,21 @@
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+function App ()
+{
   return (
-    <div>
-       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<h1>Home Page</h1>}/>
+          <Route path="/login" element={<h1>Login Page</h1>}/>
+          <Route path="/register" element={<h1>Register Page</h1>}/>
+          <Route path="/tasks" element={<h1>Tasks Page</h1>}/>
+          <Route path="/add-task" element={<h1>Create task Page</h1>}/>
+          <Route path="/tasks/:id" element={<h1>Update task Page</h1>}/>
+          <Route path="/profile" element={<h1>Profile</h1>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
