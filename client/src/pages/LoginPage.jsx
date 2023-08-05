@@ -1,5 +1,7 @@
-export const LoginPage = () => {
+function LoginPage() {
   return (
-    <div>LoginPage</div>
+    <div>LoginPage JSX</div>
   )
 }
+
+export default LoginPage
