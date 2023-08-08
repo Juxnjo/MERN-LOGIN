@@ -5,9 +5,6 @@ function RegisterPage ()
 {
     const { register, handleSubmit } = useForm()
 
-
-
-
     return (
         <div className='bg-red-900 max-w-md p-10 rounded-md'>
             <form onSubmit={ handleSubmit( async ( values ) =>
