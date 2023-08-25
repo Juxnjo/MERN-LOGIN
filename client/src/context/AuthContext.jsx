@@ -48,6 +48,11 @@ export const AuthProvider = ( { children } ) =>
         } catch ( error )
         {
             console.log( error )
+            if ( Array.isArray( error.response.data ) )
+            {
+                setErrors( error.response.data )
+            }
+            setErrors( [ error.response.data.message ] )
 
         }
     }
