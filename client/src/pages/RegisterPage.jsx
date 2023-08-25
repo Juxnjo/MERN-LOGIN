@@ -28,7 +28,7 @@ function RegisterPage ()
 
                 {
                     RegisterErrors.map( ( error, i ) => (
-                        <div className='bg-red-500 text-white p-2' key={ i }>
+                        <div className='bg-red-500 text-white p-2 my-2' key={ i }>
                             { error }
                         </div>
                     ) )
