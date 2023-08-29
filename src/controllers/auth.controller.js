@@ -96,10 +96,10 @@ export const verifyToken = async ( req, res ) => {
         if (err) return res.status(401).json({message: 'Unauthorized'})
         
         const userFound = await User.findById( user.id )
-        if (!userFound ) return res.status( 400 ).json( { message: "User not Found" } )
+        if (!userFound ) return res.status( 401 ).json( { message: "Unauthorized" } )
 
         return res.json({
-            id: userFound._id,
+            id: userFound.id,
             username: userFound.username,
             email: userFound.email
         })

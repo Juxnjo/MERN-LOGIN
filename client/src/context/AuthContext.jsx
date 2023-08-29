@@ -22,6 +22,9 @@ export const AuthProvider = ( { children } ) =>
     const [ user, setUser ] = useState( null )
     const [ isAuthenticathed, setIsAuthenticathed ] = useState( false )
     const [ errors, setErrors ] = useState( [] )
+    const [ loading, setLoading ] = useState( true )
+
+
 
     const signup = async ( user ) =>
     {
@@ -88,14 +91,17 @@ export const AuthProvider = ( { children } ) =>
                 if ( !res.data )
                 {
                     setIsAuthenticathed( false )
+                    setLoading( false )
                 }
                 setIsAuthenticathed( true )
                 setUser( res.data )
+                setLoading(false)
 
             } catch ( error )
             {
                 setIsAuthenticathed( false )
                 setUser( null )
+                setLoading(false)
             }
         }
         checkLogin()
@@ -108,7 +114,8 @@ export const AuthProvider = ( { children } ) =>
             signin,
             user,
             isAuthenticathed,
-            errors
+            errors,
+            loading
         } }>
             { children }
         </AuthContext.Provider>
