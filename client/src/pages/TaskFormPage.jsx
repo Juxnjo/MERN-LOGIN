@@ -1,5 +1,14 @@
+import { useForm } from "react-hook-form";
+
 const TaskFormPage = () =>
 {
+
+  const { register, handleSubmit } = useForm();
+
+ /*  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+  }) */
+
   return (
     <>
       <div className="flex h-[calc(100vh-100px)] items-center justify-center">
