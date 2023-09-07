@@ -9,9 +9,9 @@ const ProtectedRoute = () =>
     if (!loading && !isAuthenticathed) return <Navigate to='/login' replace />
 
     return (
-        
+        <div>
             <Outlet/>
-        
+        </div>
     )
 }
 
