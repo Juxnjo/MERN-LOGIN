@@ -25,7 +25,7 @@ function LoginPage ()
             </div>
           ) )
         }
-
+        <h1 className="flex justify-center font-medium text-xl">Login</h1>
         <form onSubmit={ onSubmited } >
 
           <input type="email" { ...register( 'email', { required: true } ) } className='w-full bg-red-700 text-white px-4 py-2 rounded-md my-2' placeholder='Email' />

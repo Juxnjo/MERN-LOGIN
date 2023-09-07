@@ -33,6 +33,7 @@ function RegisterPage ()
                         </div>
                     ) )
                 }
+                <h1 className="flex justify-center font-medium text-xl">Register</h1>
 
                 <form onSubmit={ onSubmited }>
                     <input type="text" { ...register( "username", { required: true } ) } placeholder='UserName' className='w-full bg-red-700 text-white px-4 py-2 rounded-md my-2' />
