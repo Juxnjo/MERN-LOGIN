@@ -5,9 +5,9 @@ const TaskFormPage = () =>
 
   const { register, handleSubmit } = useForm();
 
- /*  const onSubmit = handleSubmit((data) => {
-    console.log(data)
-  }) */
+  /*  const onSubmit = handleSubmit((data) => {
+     console.log(data)
+   }) */
 
   return (
     <>

@@ -19,11 +19,11 @@ export function TaskProvider ( { children } )
     const [ task, setTasks ] = useState( [] )
 
     return (
-        <TaskContext.Provider value={{
+        <TaskContext.Provider value={ {
             task
-            
-            }}>
-            {children}
+
+        } }>
+            { children }
         </TaskContext.Provider>
     )
 
