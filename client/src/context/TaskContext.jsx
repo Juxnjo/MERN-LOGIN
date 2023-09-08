@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { createTaskRequest } from "../api/task";
+import { createTaskRequest, getTasksRequest } from "../api/task";
 
 const TaskContext = createContext()
 
@@ -15,9 +15,20 @@ export const useTasks = () =>
     return context
 }
 
+// eslint-disable-next-line react/prop-types
 export function TaskProvider ( { children } )
 {
     const [ task, setTasks ] = useState( [] )
+
+    const getTasks = async () => {
+        try {
+            const res = await getTasksRequest()
+            setTasks( res.data)
+            console.log(res)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const createTask = async (task) => {
         console.log('task created')
@@ -30,7 +41,8 @@ export function TaskProvider ( { children } )
     return (
         <TaskContext.Provider value={ {
             task,
-            createTask
+            createTask,
+            getTasks
 
         } }>
             { children }
