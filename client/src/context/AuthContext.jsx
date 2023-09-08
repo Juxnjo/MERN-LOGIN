@@ -117,7 +117,8 @@ export const AuthProvider = ( { children } ) =>
             user,
             isAuthenticathed,
             errors,
-            loading
+            loading,
+            
         } }>
             { children }
         </AuthContext.Provider>

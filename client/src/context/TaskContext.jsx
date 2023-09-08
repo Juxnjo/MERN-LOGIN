@@ -18,7 +18,7 @@ export const useTasks = () =>
 // eslint-disable-next-line react/prop-types
 export function TaskProvider ( { children } )
 {
-    const [ task, setTasks ] = useState( [] )
+    const [ tasks, setTasks ] = useState( [] )
 
     const getTasks = async () => {
         try {
@@ -40,9 +40,9 @@ export function TaskProvider ( { children } )
 
     return (
         <TaskContext.Provider value={ {
-            task,
+            tasks,
             createTask,
-            getTasks
+            getTasks,
 
         } }>
             { children }
